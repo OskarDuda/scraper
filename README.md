@@ -34,3 +34,16 @@ To download the result type below in your browser address field (replacing <id> 
 ```
 http://127.0.0.1:8000/scraper/download/<id>
 ```
+
+## Summary
+The web scraping and downloading parts are separate processes which enables the user to fire and forget the scraping and return to the process once it's done, as long as they have their process ID. 
+
+Currently the download ID is shown to the user after scraping is done, but it is created before scraping is even started, so changing how this is presented to the user should be a minor tweak to the application.
+
+The user interface is non existent right now.
+
+Every time scraping is fired it creates a new folder with new data, which might be a security issue. It's prone to DOS attacks.
+
+The download ID is a folder name, where the scraping output is kept. Although there is no interface for the user to get this ID if he forgets it right, the ID is retrievable, so ID retrieval functionality might be considered in the future. 
+
+App lacks tests right now.
